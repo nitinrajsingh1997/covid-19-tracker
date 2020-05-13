@@ -4,14 +4,14 @@ import CountryPicker from '../components/Country-Picker/CountryPicker';
 
 const url = "https://covid19.mathdro.id/api";
 
-export const fetchData = async (country) => {
+export const fetchData = async (country ) => {
     let changeableUrl = url;
 
     if(country){
         changeableUrl = `${url}/countries/${country}`
     }
     try{
-        const { data } = await axios.get(url);
+        const { data } = await axios.get(changeableUrl);
         const modData = {
             confirmed: data.confirmed,
             recovered: data.recovered,

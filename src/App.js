@@ -31,7 +31,7 @@ class App extends Component{
       <div className="container">
         <Cards result={this.state.result} />
         <CountryPicker handleCountryChange={this.handleCountryChange} />
-        <Chart />
+        <Chart  result={this.state.result} country={this.state.country} />
       </div>
     );
   }
