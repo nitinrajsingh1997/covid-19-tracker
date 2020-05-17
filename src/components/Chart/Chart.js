@@ -43,7 +43,7 @@ const Chart = ({result : {confirmed, recovered, deaths}, country}) => {
         ? (
             <Bar 
             data= {{
-                label: ['Infected', 'Recovered', 'Deaths'],
+                labels: ['Infected', 'Recovered', 'Deaths'],
                 datasets : [{
                     label: 'People',
                     backgroundColor: [
@@ -51,16 +51,16 @@ const Chart = ({result : {confirmed, recovered, deaths}, country}) => {
                         'rgba(0, 255, 0, 0.5)',
                         'rgba(255, 0, 0, 0.5)'
                     ],
-                    data : [confirmed.value, recovered.value, deaths.value]
-                }]
+                    data : [confirmed.value, recovered.value, deaths.value],
+                }, ],
             }}
             options = {{
                 legend : { display: false},
-                title: { display: true, text: `Current state in ${country}`}
+                title: { display: true, text: `Current state in ${country}`},
             }}
             />
         ) : null
-    )
+    );
 
     return(
         <div className="container">
